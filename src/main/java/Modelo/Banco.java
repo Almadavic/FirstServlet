@@ -1,4 +1,4 @@
-package br.com.alura.victor;
+package Modelo;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -8,6 +8,7 @@ import java.util.List;
 public class Banco {
 
 	private static List<Empresa> empresas = new ArrayList<>();
+	private static List<Usuario> usuarios = new ArrayList<>();
 	private static Integer chaveSequencial = 1;
 
 	static {
@@ -16,6 +17,18 @@ public class Banco {
 		Empresa empresa2 = new Empresa("Caelum");
 		empresa2.setId(chaveSequencial++);
 		empresas.addAll(Arrays.asList(empresa, empresa2));
+		
+		Usuario u1 = new Usuario();
+		u1.setLogin("nico");
+		u1.setSenha("12345");
+		Usuario u2 = new Usuario();
+		u2.setLogin("ana");
+		u2.setSenha("12345");
+		Usuario u3 = new Usuario();
+		u3.setLogin("Victor");
+		u3.setSenha("1234");
+		
+		usuarios.addAll(Arrays.asList(u1,u2,u3));
 	}
 
 	public void adiciona(Empresa empresa) {
@@ -48,6 +61,15 @@ public class Banco {
 
 	public List<Empresa> getEmpresas() {
 		return empresas;
+	}
+
+	public Usuario existeUsuario(String login, String senha) {
+		for(Usuario usuario : usuarios) {
+			if(usuario.ehIgual(login, senha)) {
+				return usuario;
+			}
+		}
+		return null;
 	}
 
 }

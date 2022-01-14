@@ -1,4 +1,4 @@
-package br.com.alura.victor;
+package Modelo;
 
 import java.util.Date;
 
