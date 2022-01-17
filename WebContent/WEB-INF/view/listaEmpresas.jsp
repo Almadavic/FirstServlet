@@ -39,7 +39,7 @@ Empresa ${ empresa } cadastrada com sucesso!
 			</li>
 		</c:forEach>
 	</ul>
-		<a href="Entrada?acao=NovaEmpresasForm">Adicionar Empresa</a>
+		<a href="FirstServlet/Entrada?acao=NovaEmpresasForm">Adicionar Empresa</a>
 
 
 
